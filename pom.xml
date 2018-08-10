@@ -1,174 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.huaxia.cai.build</groupId>
-	<artifactId>huaxia-build</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.9.RELEASE</version>
+		<groupId>com.huaxia.cai.build</groupId>
+		<artifactId>huaxia-project-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>./huaxia-project/huaxia-project-parent</relativePath>
 	</parent>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
-		<dubbo.version>2.5.7</dubbo.version>
-		<zkclient.version>0.10</zkclient.version>
-		<mvn.jar.plugin.version>2.6</mvn.jar.plugin.version>
-		<mvn.compiler.plugin.version>3.5.1</mvn.compiler.plugin.version>
-		<mvn.jar.plugin.version>2.6</mvn.jar.plugin.version>
-		<mvn.install.plugin.version>2.5.1</mvn.install.plugin.version>
-		<mvn.war.plugin.version>3.0.0</mvn.war.plugin.version>
-		<fastjson.version>1.2.49</fastjson.version>
-		<slf4j-api.version>1.7.25</slf4j-api.version>
-		<log4j.version>1.2.17</log4j.version>
-	</properties>
+	<artifactId>huaxia-build</artifactId>
+	<packaging>pom</packaging>
+	
 
-	<dependencyManagement>
-		<dependencies>
-			<!-- dubbo -->
-			<dependency>
-				<groupId>com.alibaba</groupId>
-				<artifactId>dubbo</artifactId>
-				<version>2.5.7</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.zookeeper</groupId>
-				<artifactId>zookeeper</artifactId>
-				<version>3.4.6</version>
-			</dependency>
-			<dependency>
-				<groupId>com.101tec</groupId>
-				<artifactId>zkclient</artifactId>
-				<version>0.10</version>
-			</dependency>
-			<dependency>
-				<groupId>com.gitee.reger</groupId>
-				<artifactId>spring-boot-starter-dubbo</artifactId>
-				<version>1.0.9</version>
-				<exclusions>
-					<exclusion>
-						<groupId>com.101tec</groupId>
-						<artifactId>zkclient</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>log4j</groupId>
-						<artifactId>log4j</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-			<!-- log4j -->
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>${log4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j-api.version}</version>
-			</dependency>
-
-			<!-- fast josn -->
-			<dependency>
-				<groupId>com.alibaba</groupId>
-				<artifactId>fastjson</artifactId>
-				<version>${fastjson.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-	<dependencies>
-
-
-	</dependencies>
-
-	<build>
-		<finalName>${project.name}</finalName>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-maven-plugin</artifactId>
-					<configuration>
-						<jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>${mvn.jar.plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${mvn.compiler.plugin.version}</version>
-					<configuration>
-						<source>${java.version}</source>
-						<target>${java.version}</target>
-						<encoding>UTF-8</encoding>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>${mvn.install.plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>${mvn.war.plugin.version}</version>
-				</plugin>
-
-				<plugin>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>3.0.1</version>
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<phase>package</phase>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-help-plugin</artifactId>
-					<version>2.2</version>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.4</version>
-				</plugin>
-
-				<plugin>
-					<artifactId>maven-site-plugin</artifactId>
-					<configuration>
-						<locales>zh_CN</locales>
-						<outputEncoding>UTF-8</outputEncoding>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>releases</name>
-			<url>http://192.168.10.100:8080/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>snapshots</name>
-			<url>http://192.168.10.100:8080/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+	<modules>
+		<module>huaxia-project</module>
+	</modules>
+	
 </project>
