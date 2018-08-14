@@ -19,6 +19,8 @@
 		<fastjson.version>1.2.49</fastjson.version>
 		<slf4j-api.version>1.7.25</slf4j-api.version>
 		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.21</slf4j.version>
+		<logback.version>1.2.3</logback.version>
 		<jstl.version>1.2</jstl.version>
 		<jstl-api.version>1.2.1</jstl-api.version>
 		<kotlin.version>1.2.21</kotlin.version>
@@ -51,12 +53,12 @@
 		<mybatis.version>3.4.5</mybatis.version>
 		<mybatis-spring.version>1.3.1</mybatis-spring.version>
 		<mybatis-generator.version>1.3.5</mybatis-generator.version>
-		<mysql.version>6.0.6</mysql.version>
+		<mysql.version>5.1.44</mysql.version>
 		<!--swagger -->
 		<swagger.version>1.5.17</swagger.version>
 		<springfox.version>2.7.0</springfox.version>
 	</properties>
-	
+
 	<dependencyManagement>
 		<dependencies>
 
@@ -340,6 +342,71 @@
 				<version>${springfox.version}</version>
 			</dependency>
 
+			<!--redis 相关 -->
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.9.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>1.8.1.RELEASE</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-framework</artifactId>
+				<version>2.12.0</version>
+			</dependency>
+
+			<!--slf4j日志相关 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<!--logback日志相关 -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+
+			<!-- log4j日志相关 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-web</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<build>
