@@ -18,7 +18,8 @@
 
 	<!-- 按照每天生成日志文件 -->
 	<appender name="FILE"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		class="com.huaxia.cai.common.logger.slf4j.HuaXiaRollingFileAppender">
+		<appName>${appName}</appName>
 		<file>${LOG_PATH}/${appName}.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- rollover daily -->
