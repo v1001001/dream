@@ -20,10 +20,10 @@
 	<appender name="FILE"
 		class="com.huaxia.cai.common.logger.slf4j.HuaXiaRollingFileAppender">
 		<appName>${appName}</appName>
-		<file>${LOG_PATH}/${appName}.log</file>
+		<file>/data/logs/${appName}/${appName}.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- rollover daily -->
-			<fileNamePattern>${LOG_PATH}/${appName}-%d{yyyy-MM-dd}.%i.log
+			<fileNamePattern>/data/logs/${appName}/${appName}-%d{yyyy-MM-dd}.%i.log
 			</fileNamePattern>
 			<timeBasedFileNamingAndTriggeringPolicy
 				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -42,7 +42,9 @@
 
 	<!-- 日志输出级别 -->
 	<root level="INFO">
-		<appender-ref ref="STDOUT" />
+		<springProfile name="default,dev">
+			 <appender-ref ref="STDOUT" />
+		 </springProfile>
 		<appender-ref ref="FILE" />
 	</root>
 
