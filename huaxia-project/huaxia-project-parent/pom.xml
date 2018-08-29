@@ -17,6 +17,11 @@
 				<artifactId>huaxia-project-core</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			<dependency>
+				<groupId>com.huaxia.cai.build</groupId>
+	            <artifactId>huaxia-common-logger</artifactId>
+	            <version>0.0.1-SNAPSHOT</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<build>

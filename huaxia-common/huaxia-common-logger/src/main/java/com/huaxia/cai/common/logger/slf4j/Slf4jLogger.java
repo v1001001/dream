@@ -74,6 +74,16 @@ public class Slf4jLogger implements Logger, Serializable {
         }
         logger.debug(msg, e);
     }
+    
+    @Override
+	public void debug(String format, Object... argArray) {
+    	if (locationAwareLogger != null) {
+            locationAwareLogger.log(null, FQCN, LocationAwareLogger.DEBUG_INT, format, argArray, null);
+            return;
+        }
+        logger.debug(format,argArray);
+		
+	}
 
     public void info(String msg) {
         if (locationAwareLogger != null) {
@@ -82,6 +92,17 @@ public class Slf4jLogger implements Logger, Serializable {
         }
         logger.info(msg);
     }
+    
+
+	@Override
+	public void info(String format, Object... argArray) {
+		if (locationAwareLogger != null) {
+            locationAwareLogger.log(null, FQCN, LocationAwareLogger.INFO_INT, format, argArray, null);
+            return;
+        }
+        logger.info(format,argArray);
+		
+	}
 
     public void info(Throwable e) {
         if (locationAwareLogger != null) {
@@ -122,6 +143,16 @@ public class Slf4jLogger implements Logger, Serializable {
         }
         logger.warn(msg, e);
     }
+    
+	@Override
+	public void warn(String format, Object... argArray) {
+		 if (locationAwareLogger != null) {
+	            locationAwareLogger.log(null, FQCN, LocationAwareLogger.WARN_INT, format, argArray, null);
+	            return;
+	        }
+	        logger.warn(format,argArray);
+		
+	}
 
     public void error(String msg) {
         if (locationAwareLogger != null) {
@@ -146,6 +177,16 @@ public class Slf4jLogger implements Logger, Serializable {
         }
         logger.error(msg, e);
     }
+    
+    @Override
+	public void error(String format, Object... argArray) {
+    	 if (locationAwareLogger != null) {
+             locationAwareLogger.log(null, FQCN, LocationAwareLogger.ERROR_INT, format, argArray, null);
+             return;
+         }
+         logger.error(format,argArray);
+		
+	}
 
     public boolean isTraceEnabled() {
         return logger.isTraceEnabled();
@@ -166,5 +207,12 @@ public class Slf4jLogger implements Logger, Serializable {
     public boolean isErrorEnabled() {
         return logger.isErrorEnabled();
     }
+
+	
+
+
+
+	
+
 
 }

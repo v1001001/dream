@@ -12,6 +12,7 @@ target/
 .externalToolBuilders/
 .project
 .classpath
+**/.class
 
 # idea ignore
 .idea/
@@ -26,9 +27,9 @@ target/
 *.patch
 *.tmp
 *.springBeans
-.*.bat
+#.*.bat
 
-**/bin/**
+#**/bin/**
 
 # system ignore
 .DS_Store

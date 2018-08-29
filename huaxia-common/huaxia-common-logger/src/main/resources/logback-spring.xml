@@ -50,9 +50,10 @@
 		additivity="false"> <appender-ref ref="FILE" /> <appender-ref ref="STDOUT" 
 		/> </logger> </springProfile> -->
 
-	<springProfile name="!prod">
+	<!-- <springProfile name="!prod">
 		<logger name="com.huaxia" level="DEBUG" />
-	</springProfile>
+	</springProfile> -->
+	
 	<logger name="com.xxl.job.core" level="WARN" additivity="false">
 		<appender-ref ref="FILE" />
 	</logger>

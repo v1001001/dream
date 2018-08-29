@@ -42,6 +42,12 @@ public interface Logger {
      * @param e 异常信息
      */
     public void debug(Throwable e);
+    
+    /**
+     * 输出debug信息 （占位符）
+     *
+     */
+    public void debug(String format, Object... argArray);
 
     /**
      * 输出调试信息
@@ -57,6 +63,8 @@ public interface Logger {
      * @param msg 信息内容
      */
     public void info(String msg);
+    
+    
 
     /**
      * 输出普通信息
@@ -64,6 +72,12 @@ public interface Logger {
      * @param e 异常信息
      */
     public void info(Throwable e);
+    
+    /**
+     * 输出普通信息 （占位符）
+     *
+     */
+    public void info(String format, Object... argArray);
 
     /**
      * 输出普通信息
@@ -79,6 +93,14 @@ public interface Logger {
      * @param msg 信息内容
      */
     public void warn(String msg);
+    
+    
+    /**
+     * 输出警告信息 （占位符）
+     *
+     * @param msg 信息内容
+     */
+    public void warn(String format, Object... argArray);
 
     /**
      * 输出警告信息
@@ -101,6 +123,13 @@ public interface Logger {
      * @param msg 信息内容
      */
     public void error(String msg);
+    
+    /**
+     * 输出错误信息 （占位符）
+     * @param format
+     * @param argArray
+     */
+    public void error(String format, Object... argArray);
 
     /**
      * 输出错误信息

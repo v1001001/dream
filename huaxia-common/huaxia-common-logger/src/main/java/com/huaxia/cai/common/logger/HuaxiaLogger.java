@@ -1,6 +1,5 @@
 package com.huaxia.cai.common.logger;
 
-
 import com.huaxia.cai.common.logger.util.NetUtils;
 
 /**
@@ -36,7 +35,7 @@ public class HuaxiaLogger implements Logger {
 				localIp = NetUtils.getLocalIP();
 			}
 		}
-		
+
 		String log = msg + "[HXLog][HOST=" + localIp + "][APP=" + app + "]";
 
 		return log;
@@ -84,6 +83,15 @@ public class HuaxiaLogger implements Logger {
 		}
 	}
 
+	@Override
+	public void debug(String format, Object... argArray) {
+		try {
+			logger.debug(appendContextMessage(format), argArray);
+		} catch (Throwable t) {
+		}
+
+	}
+
 	public void info(String msg, Throwable e) {
 		try {
 			logger.info(appendContextMessage(msg), e);
@@ -94,6 +102,13 @@ public class HuaxiaLogger implements Logger {
 	public void info(String msg) {
 		try {
 			logger.info(appendContextMessage(msg));
+		} catch (Throwable t) {
+		}
+	}
+
+	public void info(String format, Object... argArray) {
+		try {
+			logger.info(appendContextMessage(format), argArray);
 		} catch (Throwable t) {
 		}
 	}
@@ -112,6 +127,15 @@ public class HuaxiaLogger implements Logger {
 		}
 	}
 
+	@Override
+	public void warn(String format, Object... argArray) {
+		try {
+			logger.warn(appendContextMessage(format), argArray);
+		} catch (Throwable t) {
+		}
+
+	}
+
 	public void error(String msg, Throwable e) {
 		try {
 			logger.error(appendContextMessage(msg), e);
@@ -124,6 +148,15 @@ public class HuaxiaLogger implements Logger {
 			logger.error(appendContextMessage(msg));
 		} catch (Throwable t) {
 		}
+	}
+
+	@Override
+	public void error(String format, Object... argArray) {
+		try {
+			logger.error(appendContextMessage(format), argArray);
+		} catch (Throwable t) {
+		}
+
 	}
 
 	public void error(Throwable e) {
@@ -186,4 +219,5 @@ public class HuaxiaLogger implements Logger {
 			return false;
 		}
 	}
+
 }
