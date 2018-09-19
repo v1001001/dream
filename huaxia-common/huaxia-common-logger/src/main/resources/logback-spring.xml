@@ -38,7 +38,18 @@
 		</encoder>
 	</appender>
 
-
+	<appender name="operateLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!--<Encoding>UTF-8</Encoding>-->
+		<encoder>
+			<pattern>%d %p [%t] [%c]:%L - %m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/data/logs/${appName}/operate_log/%d{yyyy-MM-dd-HH'.log'}</fileNamePattern>
+		</rollingPolicy>
+	</appender>
 
 	<!-- 日志输出级别 -->
 	<root level="INFO">
@@ -58,6 +69,10 @@
 	
 	<logger name="com.xxl.job.core" level="WARN" additivity="false">
 		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="com.huaxia.sso.filter.SSOLoginAnnotationInterceptor" level="WARN" addtivity="false">
+		<appender-ref ref="operateLogFile" />
 	</logger>
 
 
