@@ -41,13 +41,15 @@
 	<appender name="operateLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!--<Encoding>UTF-8</Encoding>-->
 		<encoder>
-			<pattern>%d %p [%t] [%c]:%L - %m%n</pattern>
+			<charset>UTF-8</charset>
+			<!--<pattern>%d %p [%t] [%c]:%L - %m%n</pattern>-->
+			<pattern>%m%n</pattern>
 		</encoder>
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 			<level>DEBUG</level>
 		</filter>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>/data/logs/${appName}/operate_log/%d{yyyy-MM-dd-HH'.log'}</fileNamePattern>
+			<fileNamePattern>/data/logs/${appName}/operate-%d{yyyy-MM-dd.HH'.log'}</fileNamePattern>
 		</rollingPolicy>
 	</appender>
 
