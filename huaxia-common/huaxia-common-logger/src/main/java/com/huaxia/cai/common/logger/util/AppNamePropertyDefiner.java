@@ -6,8 +6,6 @@ import java.util.Properties;
 
 import ch.qos.logback.core.PropertyDefinerBase;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 
 /**
  * 获取属性值
@@ -32,7 +30,7 @@ public class AppNamePropertyDefiner extends PropertyDefinerBase {
 
 			String dir = System.getProperty("user.dir");
 			if (dir != null) {
-				appName = dir.substring(dir.lastIndexOf(File.separator) + 1)+"_";
+				appName = dir.substring(dir.lastIndexOf(File.separator) + 1);
 				System.setProperty("appName", appName);
 			}
 		} catch (Exception e) {
