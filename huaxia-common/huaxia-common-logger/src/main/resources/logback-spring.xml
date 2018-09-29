@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
 
-	<springProperty scope="context" name="tempAppName"
+	<!--<springProperty scope="context" name="tempAppName"
 		source="dubbo.application.name" defaultValue="catalina" />
-		
 	<springProperty scope="context" name="appName"
 		source="spring.dubbo.application.name" defaultValue="${tempAppName}" />
+-->
+	<define name="appName" class="com.huaxia.cai.common.logger.util.AppNamePropertyDefiner" />
 
 	<!-- 控制台输出 -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
