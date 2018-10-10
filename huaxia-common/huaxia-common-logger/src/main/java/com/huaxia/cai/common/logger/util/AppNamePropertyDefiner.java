@@ -31,12 +31,6 @@ public class AppNamePropertyDefiner extends PropertyDefinerBase {
 				return appName;
 			}
 
-			/*
-			appName = getKeyByProperties(APPID);
-			if(StringUtils.isNotBlank(appName)) {
-				return appName;
-			}
-
 			String dir = System.getProperty("user.dir");
 			if (dir != null) {
 				appName = dir.substring(dir.lastIndexOf(File.separator) + 1);
@@ -44,7 +38,7 @@ public class AppNamePropertyDefiner extends PropertyDefinerBase {
 					System.setProperty("appName", appName);
 					return appName;
 				}
-			}*/
+			}
 
 		} catch (Exception e) {
 			appName="catalina";
