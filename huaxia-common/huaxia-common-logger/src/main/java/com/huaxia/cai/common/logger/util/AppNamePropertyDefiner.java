@@ -19,7 +19,7 @@ public class AppNamePropertyDefiner extends PropertyDefinerBase {
 
 	@Override
 	public String getPropertyValue() {
-		String appName =null;
+		String appName = null;
 		try {
 			/**
 			 * 获取apollo配置文件app.properties 中的app.id
@@ -31,6 +31,7 @@ public class AppNamePropertyDefiner extends PropertyDefinerBase {
 				return appName;
 			}
 
+			/*
 			appName = getKeyByProperties(APPID);
 			if(StringUtils.isNotBlank(appName)) {
 				return appName;
@@ -39,8 +40,12 @@ public class AppNamePropertyDefiner extends PropertyDefinerBase {
 			String dir = System.getProperty("user.dir");
 			if (dir != null) {
 				appName = dir.substring(dir.lastIndexOf(File.separator) + 1);
-				System.setProperty("appName", appName);
-			}
+				if(StringUtils.isNotBlank(appName)) {
+					System.setProperty("appName", appName);
+					return appName;
+				}
+			}*/
+
 		} catch (Exception e) {
 			appName="catalina";
 			e.printStackTrace();
