@@ -17,6 +17,7 @@ import org.springframework.context.annotation.PropertySource;
 public class AppNamePropertyDefiner extends PropertyDefinerBase {
 	
 	private static final String APPID = "app.id";
+	private static final String APPNAME = "app.name";
 
 	@Override
 	public String getPropertyValue() {
@@ -24,7 +25,14 @@ public class AppNamePropertyDefiner extends PropertyDefinerBase {
 		try {
 			/**
 			 * 获取apollo配置文件app.properties 中的app.id
+			 * 如果多个项目同时使用app.id，则多个项目日志名称会起冲突，
+			 * 所以添加app.name参数区别不同的项目名称，优先取app.name，如果没有app.name，则获取app.id
 			 */
+			appName = getKeyByProperties(APPNAME);
+			if(StringUtils.isNotBlank(appName)) {
+				return appName;
+			}
+
 			appName = getKeyByProperties(APPID);
 			if(StringUtils.isNotBlank(appName)) {
 				return appName;
