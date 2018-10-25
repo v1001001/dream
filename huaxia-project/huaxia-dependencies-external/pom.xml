@@ -24,6 +24,7 @@
 		<jstl.version>1.2</jstl.version>
 		<jstl-api.version>1.2.1</jstl-api.version>
 		<kotlin.version>1.2.21</kotlin.version>
+		<apollo.version>1.1.1</apollo.version>
 
 		<thymeleaf-dialect.version>2.2.2</thymeleaf-dialect.version>
 		<!-- apache -->
@@ -407,6 +408,11 @@
 				<artifactId>log4j-core</artifactId>
 				<version>${log4j.version}</version>
 			</dependency>
+			<dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+            <version>${apollo.version}</version>
+        </dependency>
 		</dependencies>
 	</dependencyManagement>
 	<build>
