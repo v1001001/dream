@@ -31,7 +31,7 @@
 		<commons-lang3.version>3.5</commons-lang3.version>
 		<commons-lang.version>2.6</commons-lang.version>
 		<commons-csv.version>1.4</commons-csv.version>
-		<commons-upload.version>1.3.2</commons-upload.version>
+		<commons-upload.version>1.3.3</commons-upload.version>
 		<httpcomponents-core.version>4.4.8</httpcomponents-core.version>
 		<httpcomponents.version>4.5.4</httpcomponents.version>
 		<poi.version>3.15</poi.version>
