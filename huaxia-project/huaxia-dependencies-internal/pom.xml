@@ -18,6 +18,12 @@
 			<groupId>com.huaxia.rms</groupId>
 			<artifactId>rms-api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.huaxia.common.core</groupId>
+					<artifactId>huaxia-common-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 	</dependencies>
