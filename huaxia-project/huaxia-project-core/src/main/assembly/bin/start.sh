@@ -56,7 +56,8 @@ org.springframework.boot.loader.PropertiesLauncher"
 if [ "$1" = "run" ]; then
     $CMD
 else
-    nohup $CMD > $STDOUT_FILE 2>&1 &
+    #nohup $CMD > $STDOUT_FILE 2>&1 &
+    nohup $CMD > /dev/null &
 
     echo "OK!"
     PIDS=`ps -ef | grep java | grep "$DEPLOY_DIR" | awk '{print $2}'`
