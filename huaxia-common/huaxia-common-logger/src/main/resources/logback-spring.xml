@@ -41,6 +41,7 @@
 
 	<appender name="operateLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!--<Encoding>UTF-8</Encoding>-->
+		<file>/data/logs/${appName}/operate.log</file>
 		<encoder>
 			<charset>UTF-8</charset>
 			<!--<pattern>%d %p [%t] [%c]:%L - %m%n</pattern>-->
