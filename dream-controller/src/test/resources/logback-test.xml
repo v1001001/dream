@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<configuration>  
+	<!-- appender -->  
+	<appender name="CONSOLE-APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder" >
+			<charset>UTF-8</charset>
+			<layout class="ch.qos.logback.classic.PatternLayout" >
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Pattern>
+			</layout>
+		</encoder>
+	</appender>
+
+	<!-- root -->  
+	<root level="info">
+		<appender-ref ref="CONSOLE-APPENDER" />
+	</root>
+</configuration>

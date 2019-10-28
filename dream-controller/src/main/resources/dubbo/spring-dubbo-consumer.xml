@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://code.alibabatech.com/schema/dubbo
+http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:reference id="rawMessageService" interface="com.huaxia.data.center.api.service.hbase.RawMessageService" version="${dubbo.consumer.version}" check="false"/>
+
+    <dubbo:reference id="apiChannelInvokeService" interface="com.huaxia.collect.center.api.service.ApiChannelInvokeService" version="${dubbo.consumer.version}" check="false"/>
+
+    <dubbo:reference id="apiPlatformInterfaceService" interface="com.huaxia.collect.center.api.service.ApiPlatformInterfaceService" version="${dubbo.consumer.version}" check="false"/>
+
+    <dubbo:reference id="simpleService" interface="com.huaxia.data.center.api.service.hbase.SimpleService" version="${dubbo.consumer.version}" check="false"/>
+
+    <dubbo:reference id="sendMqFailService" interface="com.huaxia.data.center.api.service.hbase.SendMqFailService" version="${dubbo.consumer.version}" check="false"/>
+
+</beans>

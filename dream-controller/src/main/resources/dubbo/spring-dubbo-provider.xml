@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://code.alibabatech.com/schema/dubbo
+http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+  <import resource="dubbo-config.xml"></import>
+
+  <!--对外接口：推送，采集，查询数据-->
+  <dubbo:service ref="apiCommonCallService" interface="com.huaxia.credit.api.service.ApiCommonCallService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiBqsCallService" interface="com.huaxia.credit.api.service.baiqishi.ApiBqsCallService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCrawlerCallService" interface="com.huaxia.credit.api.service.ApiCrawlerCallService" version="${dubbo.provider.version}" />
+
+  <!--报告相关-->
+  <dubbo:service ref="apiCreditXYKReportService" interface="com.huaxia.credit.api.ApiCreditXYKReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditTongXunLuReportService" interface="com.huaxia.credit.api.ApiCreditTongXunLuReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditTaoBaoReportService" interface="com.huaxia.credit.api.ApiCreditTaoBaoReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditBDReportService" interface="com.huaxia.credit.api.ApiCreditBDReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiGetCreditDataService" interface="com.huaxia.credit.api.ApiGetCreditDataService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditMxReportService" interface="com.huaxia.credit.api.ApiCreditMxReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditReportService" interface="com.huaxia.credit.api.ApiCreditReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditZiXinService" interface="com.huaxia.credit.api.ApiCreditZiXinService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditMoXieJDService" interface="com.huaxia.credit.api.ApiCreditMoXieJDService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditRHReportService" interface="com.huaxia.credit.api.ApiCreditRHReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditGongjijinReportService" interface="com.huaxia.credit.api.ApiCreditGongjijinReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditSheBaoReportService" interface="com.huaxia.credit.api.ApiCreditSheBaoReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditMoXieEmailBillReportService" interface="com.huaxia.credit.api.ApiCreditMoXieEmailBillReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditEbankReportService" interface="com.huaxia.credit.api.ApiCreditEbankReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiRenHangRuleService" interface="com.huaxia.credit.api.rule.ApiRenHangRuleService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiHuaCaiRuleService" interface="com.huaxia.credit.api.rule.ApiHuaCaiRuleService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiBlankDataService" interface="com.huaxia.credit.api.ApiBlankDataService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditMxTaobaoReportService" interface="com.huaxia.credit.api.ApiCreditMxTaobaoReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditXuexinwangReportService" interface="com.huaxia.credit.api.ApiCreditXuexinwangReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditShangTangService" interface="com.huaxia.credit.api.ApiCreditShangTangService" version="${dubbo.provider.version}" />
+  <dubbo:service ref="apiCreditMoXieYunYingShangService" interface="com.huaxia.credit.api.ApiCreditMoXieYunYingShangService" version="${dubbo.provider.version}" />
+  <dubbo:service ref="apiCreditMoXieAlipayService" interface="com.huaxia.credit.api.ApiCreditMoXieAlipayService" version="${dubbo.provider.version}" />
+  <dubbo:service ref="apiCreditBaiQiShiService" interface="com.huaxia.credit.api.ApiCreditBaiQiShiService" version="${dubbo.provider.version}" />
+  <dubbo:service ref="apiCreditTongDunReportService" interface="com.huaxia.credit.api.ApiCreditTongDunReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditParsedataFailService" interface="com.huaxia.credit.api.ApiCreditParsedataFailService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditTaskService" interface="com.huaxia.credit.api.ApiCreditTaskService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditJxlReportService" interface="com.huaxia.credit.api.ApiCreditJxlReportService" version="${dubbo.provider.version}"/>
+
+  <dubbo:service ref="apiCreditMxCarrierReportService" interface="com.huaxia.credit.api.ApiCreditMxCarrierReportService" version="${dubbo.provider.version}" />
+
+  <dubbo:service ref="apiCreditMoXieBankBillReportService" interface="com.huaxia.credit.api.ApiCreditMoXieBankBillReportService" version="${dubbo.provider.version}" />
+
+  <!-- 百行征信service -->
+  <dubbo:service ref="apiCreditBaihangService" interface="com.huaxia.credit.api.ApiCreditBaihangService" version="${dubbo.provider.version}" />
+
+  <!-- 提供给管控中心 -->
+  <dubbo:service ref="apiValidateTimeParamService" interface="com.huaxia.credit.api.ApiValidateTimeParamService" version="${dubbo.provider.version}" />
+
+  <dubbo:service ref="apiCreditCourtReportService" interface="com.huaxia.credit.api.ApiCreditCourtReportService" version="${dubbo.provider.version}" />
+
+  <dubbo:service ref="apiCreditOperatorReportService" interface="com.huaxia.credit.api.ApiCreditOperatorReportService" version="${dubbo.provider.version}" />
+
+</beans>
